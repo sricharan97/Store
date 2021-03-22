@@ -10,4 +10,23 @@
     <string name="to">To</string>
     <string name="other_text">Shoe store</string>
     <string name="instructions_button_text">Go to the store</string>
+    <string name="first_instruction_text">1. You can find the list of shoes \n
+        in your store in the next screen</string>
+    <string name="second_instruction_text">2. You can add a new shoe to your list \n
+        using the plus button in the list screen</string>
+    <string name="instructions_button">See the Shoe list</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="fragment_login_label">Login</string>
+    <string name="fragment_welcome_label">Welcome</string>
+    <string name="fragment_instructions_label">Instructions</string>
+    <string name="fragment_shoe_list_label">Shoe list</string>
+    <string name="shoe_name_label">Shoe name</string>
+    <string name="shoe_company_label">Shoe company</string>
+    <string name="shoe_size_label">Shoe size</string>
+    <string name="cancel_button">cancel</string>
+    <string name="save_button">save</string>
+    <string name="description_label">Description</string>
+    <string name="shoe_detail_label">Add a shoe</string>
+
 </resources>
