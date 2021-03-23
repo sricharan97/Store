@@ -28,5 +28,6 @@
     <string name="save_button">save</string>
     <string name="description_label">Description</string>
     <string name="shoe_detail_label">Add a shoe</string>
+    <string name="fab_content">add a shoe button</string>
 
 </resources>

@@ -13,7 +13,6 @@ import androidx.fragment.app.activityViewModels
 import androidx.lifecycle.Observer
 import androidx.navigation.findNavController
 import com.udacity.shoestore.databinding.FragmentShoeListBinding
-import com.udacity.shoestore.models.Shoe
 import com.udacity.shoestore.models.ShoeViewModel
 
 class ShoeListFragment : Fragment() {
@@ -27,18 +26,18 @@ class ShoeListFragment : Fragment() {
                 R.layout.fragment_shoe_list, container, false)
 
         // get the id of Linearlayout
-        val linearLayout = binding.shoeListLinearLayout
+        val linearLayout = binding.listLinearLayout
 
         //Observe the data changes to shoe list
         viewModel.shoeList.observe(viewLifecycleOwner, Observer {
-            val shoe: Shoe = it.last()
-            val textView = TextView(context)
-            textView.text = shoe.name
-            textView.layoutParams = LinearLayout.LayoutParams(LinearLayout.LayoutParams.WRAP_CONTENT,
-                    LinearLayout.LayoutParams.WRAP_CONTENT)
-            Log.d("ShoeListFragment", "${textView.text} is the textview")
-            linearLayout.addView(textView)
-
+            for (shoe in it) {
+                val textView = TextView(context)
+                textView.text = shoe.name
+                textView.layoutParams = LinearLayout.LayoutParams(LinearLayout.LayoutParams.WRAP_CONTENT,
+                        LinearLayout.LayoutParams.WRAP_CONTENT)
+                Log.d("ShoeListFragment", "${textView.text} is the textview")
+                linearLayout.addView(textView)
+            }
 
         })
 
