@@ -10,10 +10,13 @@ class ShoeViewModel() : ViewModel() {
     val shoeList: LiveData<List<Shoe>>
         get() = _shoeList
 
-    private val _addedShoe = MutableLiveData<Boolean>()
-    val addedShoe: LiveData<Boolean>
-        get() = _addedShoe
+    private val _onSave = MutableLiveData<Boolean>()
+    val onSave: LiveData<Boolean>
+        get() = _onSave
 
+    private val _onCancel = MutableLiveData<Boolean>()
+    val onCancel: LiveData<Boolean>
+        get() = _onCancel
 
     /** Expose MutableLiveData for edit text variables so that
      * layout has access to write data to the liveData
@@ -21,35 +24,48 @@ class ShoeViewModel() : ViewModel() {
      */
 
     //Edit Text content for shoe name
-    var shoeName = MutableLiveData<String>()
+    val shoeName = MutableLiveData<String>()
 
     //Edit Text content for shoe size
-    var shoeSize = MutableLiveData<Double>()
+    val shoeSize = MutableLiveData<Double>()
 
     //Edit text content for shoe Description
-    var shoeDescription = MutableLiveData<String>()
+    val shoeDescription = MutableLiveData<String>()
 
 
     //Edit text content for shoe Company
-    var shoeCompany = MutableLiveData<String>()
+    val shoeCompany = MutableLiveData<String>()
 
 
     val shoes: MutableList<Shoe> = mutableListOf()
 
+    init {
+        _onSave.value = false
+        _onCancel.value = false
+    }
+
     fun addNewShoe() {
         val shoe = Shoe(
-            shoeName.value.toString(), shoeSize.value!!.toDouble(),
-            shoeCompany.value.toString(), shoeDescription.value.toString()
+                shoeName.value.toString(), shoeSize.value!!.toDouble(),
+                shoeCompany.value.toString(), shoeDescription.value.toString()
         )
         shoes.add(shoe)
         _shoeList.value = shoes
-        _addedShoe.value = true
+        _onSave.value = true
         invalidateCurrentEditTextFields()
 
     }
 
-    fun onSaveButtonClicked() {
-        _addedShoe.value = false
+    fun doneSaving() {
+        _onSave.value = false
+    }
+
+    fun clicksCancel() {
+        _onCancel.value = true
+    }
+
+    fun doneCancelling() {
+        _onCancel.value = false
     }
 
     fun invalidateCurrentEditTextFields() {
@@ -57,6 +73,7 @@ class ShoeViewModel() : ViewModel() {
         shoeSize.value = null
         shoeCompany.value = null
         shoeDescription.value = null
+
     }
 
 }

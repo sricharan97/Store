@@ -7,7 +7,8 @@ import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
-import androidx.navigation.findNavController
+import androidx.lifecycle.Observer
+import androidx.navigation.fragment.NavHostFragment.findNavController
 import com.udacity.shoestore.databinding.FragmentShoeDetailBinding
 import com.udacity.shoestore.models.ShoeViewModel
 
@@ -20,27 +21,32 @@ class ShoeDetailFragment : Fragment() {
 
         // Inflate the layout for this fragment
         val binding: FragmentShoeDetailBinding = DataBindingUtil.inflate(
-            inflater, R.layout.fragment_shoe_detail,
-            container, false
+                inflater, R.layout.fragment_shoe_detail,
+                container, false
         )
 
         binding.shoeViewModel = viewModel
         binding.setLifecycleOwner(this)
 
+
         //Cancel button functionality
-        binding.cancel.setOnClickListener { v: View ->
-            v.findNavController()
-                .navigate(ShoeDetailFragmentDirections.actionShoeDetailFragmentToShoeListFragment())
-        }
+        viewModel.onCancel.observe(viewLifecycleOwner, Observer { isCancelled ->
+            if (isCancelled) {
+                findNavController(this)
+                        .navigate(ShoeDetailFragmentDirections.actionShoeDetailFragmentToShoeListFragment())
+                viewModel.doneCancelling()
+            }
+        })
+
 
         //save button functionality
-        binding.save.setOnClickListener {
-            //Log.d("ShoeDetailFragment", "inside save button click")
-            viewModel.addNewShoe()
-            it.findNavController()
-                .navigate(ShoeDetailFragmentDirections.actionShoeDetailFragmentToShoeListFragment())
+        viewModel.onSave.observe(viewLifecycleOwner, Observer { isSaved ->
+            if (isSaved) {
+                findNavController(this).navigate(ShoeDetailFragmentDirections.actionShoeDetailFragmentToShoeListFragment())
+                viewModel.doneSaving()
+            }
+        })
 
-        }
         return binding.root
     }
 
