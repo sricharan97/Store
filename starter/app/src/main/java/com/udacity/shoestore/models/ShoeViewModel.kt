@@ -62,6 +62,7 @@ class ShoeViewModel() : ViewModel() {
 
     fun clicksCancel() {
         _onCancel.value = true
+        invalidateCurrentEditTextFields()
     }
 
     fun doneCancelling() {

@@ -1,27 +1,22 @@
 <?xml version="1.0" encoding="utf-8"?>
 
-<layout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools">
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
 
-    <FrameLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        tools:context=".WelcomeFragment">
-
+        <!-- Being simple text views and button layout, using linearLayout as a root tag-->
         <LinearLayout
-            style="@style/textStyle"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:orientation="vertical">
 
-        <TextView
-            android:id="@+id/welcome_text"
+                <TextView
+                    android:id="@+id/welcome_text"
             style="@style/textStyle"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:text="@string/welcome_text" />
+                    android:layout_gravity="center"
+                    android:layout_marginBottom="16dp"
+                    android:text="@string/welcome_text" />
 
         <TextView
             android:id="@+id/to"
@@ -29,6 +24,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
+            android:layout_marginBottom="16dp"
             android:text="@string/to" />
 
         <TextView
@@ -47,8 +43,5 @@
             android:text="@string/instructions_button_text" />
 
         </LinearLayout>
-
-
-    </FrameLayout>
 
 </layout>

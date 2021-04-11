@@ -19,7 +19,7 @@
 
     <style name="textStyle">
         <item name="android:fontFamily">@font/roboto</item>
-        <item name="android:textAppearance">@style/TextAppearance.AppCompat.Small</item>
+        <item name="android:textAppearance">@style/TextAppearance.AppCompat.Headline</item>
     </style>
 
     <style name="shoe_name_style">

@@ -16,17 +16,19 @@ class ShoeDetailFragment : Fragment() {
 
     private val viewModel: ShoeViewModel by activityViewModels()
 
-    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?,
-                              savedInstanceState: Bundle?): View? {
+    override fun onCreateView(
+        inflater: LayoutInflater, container: ViewGroup?,
+        savedInstanceState: Bundle?
+    ): View {
 
         // Inflate the layout for this fragment
         val binding: FragmentShoeDetailBinding = DataBindingUtil.inflate(
-                inflater, R.layout.fragment_shoe_detail,
-                container, false
+            inflater, R.layout.fragment_shoe_detail,
+            container, false
         )
 
         binding.shoeViewModel = viewModel
-        binding.setLifecycleOwner(this)
+        binding.lifecycleOwner = this
 
 
         //Cancel button functionality

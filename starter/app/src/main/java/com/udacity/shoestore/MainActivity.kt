@@ -1,9 +1,6 @@
 package com.udacity.shoestore
 
 import android.os.Bundle
-import android.view.Menu
-import android.view.MenuInflater
-import android.view.MenuItem
 import androidx.appcompat.app.AppCompatActivity
 import androidx.databinding.DataBindingUtil
 import androidx.navigation.NavController
@@ -20,25 +17,15 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
 
         val binding =
-                DataBindingUtil.setContentView<ActivityMainBinding>(this, R.layout.activity_main)
+            DataBindingUtil.setContentView<ActivityMainBinding>(this, R.layout.activity_main)
         navController = this.findNavController(R.id.myNavHostFragment)
-        val appBarConfiguration = AppBarConfiguration(navController.graph)
+
+        val appBarConfiguration =
+            AppBarConfiguration(setOf(R.id.loginFragment, R.id.shoeListFragment))
         val toolbar = binding.toolbar
         setSupportActionBar(toolbar)
         NavigationUI.setupWithNavController(toolbar, navController, appBarConfiguration)
     }
 
-    override fun onCreateOptionsMenu(menu: Menu?): Boolean {
-        val inflater: MenuInflater = menuInflater
-        super.onCreateOptionsMenu(menu)
-        inflater.inflate(R.menu.activity_menu, menu)
-        return true
-    }
-
-    override fun onOptionsItemSelected(item: MenuItem): Boolean {
-        return NavigationUI.onNavDestinationSelected(item, navController)
-                || super.onOptionsItemSelected(item)
-
-    }
 }
 

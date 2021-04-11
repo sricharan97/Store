@@ -1,52 +1,45 @@
 <?xml version="1.0" encoding="utf-8"?>
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools">
 
-
-    <androidx.constraintlayout.widget.ConstraintLayout
+    <!-- Being simple text views and button layout, using linearLayout as a root tag-->
+    <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        tools:context=".InstructionsFragment">
+        android:layout_height="match_parent">
 
-        <TextView
-            android:id="@+id/first_instruction"
+        <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="@dimen/instructions_text_margin"
-            android:layout_marginRight="@dimen/instructions_text_margin"
-            android:inputType="textMultiLine"
-            android:lines="@integer/instructions_lines"
-            android:text="@string/first_instruction_text"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.4" />
+            android:layout_gravity="center"
+            android:orientation="vertical"
+            android:padding="36dp"
+            tools:context=".InstructionsFragment">
 
-        <TextView
-            android:id="@+id/second_instruction"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="@dimen/instructions_text_margin"
-            android:layout_marginRight="@dimen/instructions_text_margin"
-            android:lines="@integer/instructions_lines"
-            android:text="@string/second_instruction_text"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            <TextView
+                style="@style/textStyle"
+                android:id="@+id/first_instruction"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/first_instruction_text"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginBottom="32dp" />
 
-        <Button
-            android:id="@+id/shoe_list_button"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/instructions_button"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/second_instruction"
-            app:layout_constraintVertical_bias="0.29000002" />
-    </androidx.constraintlayout.widget.ConstraintLayout>
+            <TextView
+                style="@style/textStyle"
+                android:id="@+id/second_instruction"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/second_instruction_text"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginBottom="56dp" />
+
+            <Button
+                android:id="@+id/shoe_list_button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:text="@string/instructions_button" />
+        </LinearLayout>
+    </ScrollView>
 
 </layout>

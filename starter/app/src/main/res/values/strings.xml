@@ -10,9 +10,8 @@
     <string name="to">To</string>
     <string name="other_text">Shoe store</string>
     <string name="instructions_button_text">Go to the store</string>
-    <string name="first_instruction_text">1. You can find the list of shoes \n
-        in your store in the next screen</string>
-    <string name="second_instruction_text">2. You can add a new shoe to your list \n
+    <string name="first_instruction_text">1. You can find the list of shoes in your store in the next screen</string>
+    <string name="second_instruction_text">2. You can add a new shoe to your list
         using the plus button in the list screen</string>
     <string name="instructions_button">See the Shoe list</string>
     <!-- TODO: Remove or change this placeholder text -->
@@ -29,5 +28,6 @@
     <string name="description_label">Description</string>
     <string name="shoe_detail_label">Add a shoe</string>
     <string name="fab_content">add a shoe button</string>
+    <string name="logout_menu_item">logout</string>
 
 </resources>

@@ -13,14 +13,19 @@ import com.udacity.shoestore.databinding.FragmentInstructionsBinding
 class InstructionsFragment : Fragment() {
 
 
-    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?,
-                              savedInstanceState: Bundle?): View? {
+    override fun onCreateView(
+        inflater: LayoutInflater, container: ViewGroup?,
+        savedInstanceState: Bundle?
+    ): View {
         // Inflate the layout for this fragment
-        val binding: FragmentInstructionsBinding = DataBindingUtil.inflate(inflater,
-                R.layout.fragment_instructions, container, false)
+        val binding: FragmentInstructionsBinding = DataBindingUtil.inflate(
+            inflater,
+            R.layout.fragment_instructions, container, false
+        )
 
         binding.shoeListButton.setOnClickListener { v: View ->
-            v.findNavController().navigate(InstructionsFragmentDirections.actionInstructionsFragmentToShoeListFragment())
+            v.findNavController()
+                .navigate(InstructionsFragmentDirections.actionInstructionsFragmentToShoeListFragment())
         }
         return binding.root
     }
