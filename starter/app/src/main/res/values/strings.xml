@@ -9,25 +9,26 @@
     <string name="welcome_text">Welcome</string>
     <string name="to">To</string>
     <string name="other_text">Shoe store</string>
-    <string name="instructions_button_text">Go to the store</string>
+    <string name="welcome_button_text">See Instructions</string>
     <string name="first_instruction_text">1. You can find the list of shoes in your store in the next screen</string>
     <string name="second_instruction_text">2. You can add a new shoe to your list
-        using the plus button in the list screen</string>
-    <string name="instructions_button">See the Shoe list</string>
-    <!-- TODO: Remove or change this placeholder text -->
+        using the plus button</string>
+    <string name="instructions_button">Enter the store</string>
     <string name="hello_blank_fragment">Hello blank fragment</string>
-    <string name="fragment_login_label">Login</string>
-    <string name="fragment_welcome_label">Welcome</string>
-    <string name="fragment_instructions_label">Instructions</string>
-    <string name="fragment_shoe_list_label">Shoe list</string>
+    <string name="fragment_login_label">LOGIN</string>
+    <string name="fragment_welcome_label">WELCOME</string>
+    <string name="fragment_instructions_label">INSTRUCTIONS</string>
+    <string name="fragment_shoe_list_label">SHOE LIST</string>
     <string name="shoe_name_label">Shoe name</string>
     <string name="shoe_company_label">Shoe company</string>
     <string name="shoe_size_label">Shoe size</string>
-    <string name="cancel_button">cancel</string>
+    <string name="cancel_button">Cancel</string>
     <string name="save_button">save</string>
     <string name="description_label">Description</string>
-    <string name="shoe_detail_label">Add a shoe</string>
+    <string name="shoe_detail_label">ADD SHOE</string>
     <string name="fab_content">add a shoe button</string>
     <string name="logout_menu_item">logout</string>
+    <string name="list_company_text">"Company : "</string>
+    <string name="list_sixe_text">"Size : "</string>
 
 </resources>

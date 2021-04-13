@@ -15,7 +15,7 @@
             android:id="@+id/email_id_edit_text"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="16dp"
+            android:layout_marginStart="@dimen/login_edit_fields_left_margin"
             android:hint="@string/email_hint"
             android:inputType="textEmailAddress"
             app:layout_constraintBaseline_toBaselineOf="@+id/email_label"
@@ -32,10 +32,10 @@
 
         <TextView
             android:id="@+id/password_label"
+            style="@style/labelStyle"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/password"
-            android:textAppearance="@style/TextAppearance.AppCompat.Medium"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.1"
@@ -44,10 +44,10 @@
 
         <TextView
             android:id="@+id/email_label"
+            style="@style/labelStyle"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/email_id"
-            android:textAppearance="@style/TextAppearance.AppCompat.Medium"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.1"
@@ -59,7 +59,7 @@
             android:id="@+id/editTextTextPassword"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="16dp"
+            android:layout_marginStart="@dimen/login_edit_fields_left_margin"
             android:hint="@string/password_hint"
             android:inputType="textPassword"
             app:layout_constraintBaseline_toBaselineOf="@+id/password_label"
@@ -67,24 +67,22 @@
             tools:ignore="Autofill" />
 
         <Button
+            style="@style/button_style"
             android:id="@+id/login_id"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:fontFamily="@font/roboto"
             android:text="@string/login"
-            android:textAlignment="center"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toEndOf="@+id/create_account_label"
             app:layout_constraintTop_toTopOf="@+id/create_account_label" />
 
         <Button
             android:id="@+id/create_account_label"
+            style="@style/button_style"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginEnd="40dp"
-            android:fontFamily="@font/roboto"
+            android:layout_marginEnd="@dimen/login_margin_btw_buttons"
             android:text="@string/create_account"
-            android:textAlignment="center"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toStartOf="@+id/login_id"
             app:layout_constraintHorizontal_bias="0.35"

@@ -11,36 +11,37 @@
 
                 <TextView
                     android:id="@+id/welcome_text"
-            style="@style/textStyle"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+                    style="@style/textStyle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
                     android:layout_gravity="center"
-                    android:layout_marginBottom="16dp"
+                    android:layout_marginBottom="@dimen/welcome_margin_texts"
                     android:text="@string/welcome_text" />
 
-        <TextView
-            android:id="@+id/to"
-            style="@style/textStyle"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:layout_marginBottom="16dp"
-            android:text="@string/to" />
+                <TextView
+                    android:id="@+id/to"
+                    style="@style/textStyle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginBottom="@dimen/welcome_margin_texts"
+                    android:text="@string/to" />
 
-        <TextView
-            android:id="@+id/remaining_text"
-            style="@style/textStyle"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:text="@string/other_text" />
+                <TextView
+                    android:id="@+id/remaining_text"
+                    style="@style/textStyle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:text="@string/other_text" />
 
-        <Button
-            android:id="@+id/instructions_button"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="48dp"
-            android:text="@string/instructions_button_text" />
+                <Button
+                    android:id="@+id/instructions_button"
+                    style="@style/button_style"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/welcome_button_top_margin"
+                    android:text="@string/welcome_button_text" />
 
         </LinearLayout>
 

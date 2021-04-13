@@ -12,29 +12,30 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:orientation="vertical"
-            android:padding="36dp"
+            android:padding="@dimen/instructions_layout_padding"
             tools:context=".InstructionsFragment">
 
             <TextView
-                style="@style/textStyle"
                 android:id="@+id/first_instruction"
+                style="@style/textStyle"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/first_instruction_text"
                 android:layout_gravity="center_horizontal"
-                android:layout_marginBottom="32dp" />
+                android:layout_marginBottom="@dimen/instructions_margin_btw_text"
+                android:text="@string/first_instruction_text" />
 
             <TextView
-                style="@style/textStyle"
                 android:id="@+id/second_instruction"
+                style="@style/textStyle"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/second_instruction_text"
                 android:layout_gravity="center_horizontal"
-                android:layout_marginBottom="56dp" />
+                android:layout_marginBottom="@dimen/instructions_margin_for_button"
+                android:text="@string/second_instruction_text" />
 
             <Button
                 android:id="@+id/shoe_list_button"
+                style="@style/button_style"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_horizontal"

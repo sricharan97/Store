@@ -1,4 +1,24 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <dimen name="instructions_text_margin">48dp</dimen>
+    <dimen name="login_edit_fields_left_margin">16dp</dimen>
+    <dimen name="login_margin_btw_buttons">36dp</dimen>
+    <dimen name="welcome_button_top_margin">48dp</dimen>
+    <dimen name="instructions_layout_padding">36dp</dimen>
+    <dimen name="instructions_margin_btw_text">32dp</dimen>
+    <dimen name="instructions_margin_for_button">56dp</dimen>
+    <dimen name="welcome_margin_texts">16dp</dimen>
+    <dimen name="list_bottom_padding_layout">48dp</dimen>
+    <dimen name="list_scroll_top_margin">16dp</dimen>
+    <dimen name="list_linear_side_margins">24dp</dimen>
+    <dimen name="detail_layout_padding">48dp</dimen>
+    <dimen name="detail_edit_start_margins">16dp</dimen>
+    <dimen name="detail_edit_bottom_margins">24dp</dimen>
+    <dimen name="detail_button_margin">24dp</dimen>
+    <dimen name="item_name_top">24dp</dimen>
+    <dimen name="item_start_margin">16dp</dimen>
+    <dimen name="item_size_pad_end">8dp</dimen>
+    <dimen name="item_description_top_margin">16dp</dimen>
+    <dimen name="item_bot_line_top_margin">8dp</dimen>
+    <dimen name="item_comp_start">24dp</dimen>
 </resources>

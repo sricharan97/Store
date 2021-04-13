@@ -10,6 +10,7 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:paddingBottom="@dimen/list_bottom_padding_layout"
         tools:context=".ShoeListFragment">
 
         <com.google.android.material.floatingactionbutton.FloatingActionButton
@@ -31,7 +32,7 @@
             android:id="@+id/shoe_list_scroll_view"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_marginTop="16dp"
+            android:layout_marginTop="@dimen/list_scroll_top_margin"
             app:layout_constraintTop_toTopOf="parent"
             tools:layout_editor_absoluteX="-194dp">
 
@@ -39,7 +40,7 @@
                 android:id="@+id/list_linear_layout"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="24dp"
+                android:layout_marginStart="@dimen/list_linear_side_margins"
                 android:layout_marginEnd="24dp"
                 android:orientation="vertical" />
         </ScrollView>
