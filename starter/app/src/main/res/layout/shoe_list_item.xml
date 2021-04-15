@@ -1,17 +1,29 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content">
+    xmlns:tools="http://schemas.android.com/tools">
 
-    <TextView
-        android:id="@+id/list_shoe_name"
-        style="@style/shoe_name_style"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="@dimen/item_name_top"
-        app:layout_constraintEnd_toEndOf="parent"
+    <data>
+
+        <import type="com.udacity.shoestore.models.Converter" />
+
+        <variable
+            name="shoe"
+            type="com.udacity.shoestore.models.Shoe" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:id="@+id/list_shoe_name"
+            style="@style/shoe_name_style"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/item_name_top"
+            android:text="@{shoe.name}"
+            app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.2"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
@@ -22,6 +34,7 @@
         style="@style/shoe_size_style"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:text="@{Converter.doubleToString(shoe.size)}"
         android:layout_marginStart="@dimen/item_start_margin"
         android:paddingEnd="@dimen/item_size_pad_end"
         app:layout_constraintBaseline_toBaselineOf="@+id/size_text"
@@ -34,6 +47,7 @@
         style="@style/shoe_company_style"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:text="@{shoe.company}"
         android:layout_marginStart="@dimen/item_start_margin"
         app:layout_constraintBaseline_toBaselineOf="@+id/company_text"
         app:layout_constraintStart_toEndOf="@+id/company_text"
@@ -44,6 +58,7 @@
         style="@style/description_style"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
+        android:text="@{shoe.description}"
         android:layout_marginTop="@dimen/item_description_top_margin"
         android:gravity="center_horizontal"
         app:layout_constraintEnd_toEndOf="@+id/view"
@@ -70,13 +85,14 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/list_shoe_name" />
 
-    <TextView
-        android:id="@+id/size_text"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="@dimen/item_name_top"
-        android:text="@string/list_sixe_text"
-        android:textStyle="italic"
-        app:layout_constraintEnd_toEndOf="@+id/company_text"
-        app:layout_constraintTop_toBottomOf="@id/company_text" />
-</androidx.constraintlayout.widget.ConstraintLayout>
+        <TextView
+            android:id="@+id/size_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/item_name_top"
+            android:text="@string/list_sixe_text"
+            android:textStyle="italic"
+            app:layout_constraintEnd_toEndOf="@+id/company_text"
+            app:layout_constraintTop_toBottomOf="@id/company_text" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

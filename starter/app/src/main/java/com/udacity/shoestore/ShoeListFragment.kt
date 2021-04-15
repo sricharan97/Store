@@ -4,7 +4,6 @@ import android.annotation.SuppressLint
 import android.os.Bundle
 import android.view.*
 import android.widget.LinearLayout
-import android.widget.TextView
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
@@ -12,6 +11,7 @@ import androidx.lifecycle.Observer
 import androidx.navigation.findNavController
 import androidx.navigation.fragment.findNavController
 import com.udacity.shoestore.databinding.FragmentShoeListBinding
+import com.udacity.shoestore.databinding.ShoeListItemBinding
 import com.udacity.shoestore.models.Shoe
 import com.udacity.shoestore.models.ShoeViewModel
 
@@ -37,15 +37,16 @@ class ShoeListFragment : Fragment() {
         //Observe the data changes to shoe list
         viewModel.shoeList.observe(viewLifecycleOwner, Observer {
             for (shoe in it) {
-                val custInflater = inflater.inflate(R.layout.shoe_list_item, null, false)
-                inflateItemLayout(shoe, custInflater)
+                //val custInflater = inflater.inflate(R.layout.shoe_list_item, null, false)
+                inflateItemLayout(shoe, inflater)
             }
         })
 
         //floating action button functionality
         binding.floatingActionButton.setOnClickListener { v: View ->
 
-            v.findNavController().navigate(ShoeListFragmentDirections.actionShoeListFragmentToShoeDetailFragment())
+            v.findNavController()
+                .navigate(ShoeListFragmentDirections.actionShoeListFragmentToShoeDetailFragment())
 
         }
 
@@ -54,17 +55,13 @@ class ShoeListFragment : Fragment() {
     }
 
 
-    private fun inflateItemLayout(shoe: Shoe, viewGroup: View) {
-        val shoeNameText = viewGroup.findViewById<TextView>(R.id.list_shoe_name)
-        shoeNameText.text = shoe.name
-        val shoeSizeText = viewGroup.findViewById<TextView>(R.id.list_shoe_size)
-        shoeSizeText.text = shoe.size.toString()
-        val shoeCompanyText = viewGroup.findViewById<TextView>(R.id.list_shoe_company)
-        shoeCompanyText.text = shoe.company
-        val descriptionText = viewGroup.findViewById<TextView>(R.id.list_description)
-        descriptionText.text = shoe.description
-        linearLayout.addView(viewGroup)
-
+    private fun inflateItemLayout(shoe: Shoe, inflater: LayoutInflater) {
+        val itemBinding: ShoeListItemBinding = DataBindingUtil.inflate(
+            inflater,
+            R.layout.shoe_list_item, null, false
+        )
+        itemBinding.shoe = shoe
+        linearLayout.addView(itemBinding.root)
     }
 
     override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {
@@ -81,7 +78,5 @@ class ShoeListFragment : Fragment() {
             else -> super.onOptionsItemSelected(item)
 
         }
-        /* return NavigationUI.onNavDestinationSelected(item, requireView().findNavController())
-                 || super.onOptionsItemSelected(item)*/
     }
 }
