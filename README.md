@@ -1,52 +1,27 @@
-# README Template
 
-Below is a template provided for use when building your README file for students.
+# Shoe Store
 
-# Project Title
+This project is part of the udacity nanodegree - **Android Kotlin Developer** submitted to demonstrate the skills learned from the first course - **Developing Android Apps with Kotlin - Part 1**
 
-Project description goes here.
+## Project Overview
 
-## Getting Started
+The App should use a single Activity. it contains below mentioned five screens each implemented as a fragment
 
-Instructions for how to get a copy of the project running on your local machine.
+  1. **Login screen**: Email and password fields and labels plus create and login buttons
+  2. **Welcome onboarding screen**
+  3. **Instructions onboarding screen**
+  4. **Shoe Listing screen**
+  5. **Shoe Detail screen**: For adding a new shoe
+  
+While the login and onboarding pages will not do anything, the user will need to save the login state so that the login and onboarding pages do not show again.The shoe listing page will show the list of shoes and show a button for adding a new shoe, while the detail page will be for adding a shoe entry. All entries will be saved only as long as the app is running.
 
-### Dependencies
 
-```
-Examples here
-```
+## Skills Learned
 
-### Installation
-
-Step by step explanation of how to get a dev environment running.
-
-List out the steps
-
-```
-Give an example here
-```
-
-## Testing
-
-Explain the steps needed to run any automated tests
-
-### Break Down Tests
-
-Explain what each test does and why
-
-```
-Examples here
-```
-## Project Instructions
-
-This section should contain all the student deliverables for this project.
-
-## Built With
-
-* [Item1](www.item1.com) - Description of item
-* [Item2](www.item2.com) - Description of item
-* [Item3](www.item3.com) - Description of item
-
-Include all items used to build project.
-
-## License
+  1. MVVM architecture
+  2. Building flat view hierarchy layouts with Constraint layout
+  3. Two-way Databinding
+  4. LiveData and ViewModel
+  5. Using Navigation component for App navigation and back stack handling
+  6. Safe Args
+  7. Transition Animations
